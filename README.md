@@ -4,6 +4,13 @@ This script has been developed for use with Autoware. It allows for publishing m
 
 <br>
 
+## Customizing Map Parameters
+
+To run the script on a specific map, you need to update the initial pose and goal pose commands inside the script. This ensures proper functioning of the script with the chosen map. Follow the steps below to customize the map parameters.
+
+
+<br>
+
 ## Generating a Publish Initial Pose Command
 
 To automate the process of publishing the intitial pose of the ego vehicle, the publish command is required. Follow these steps:
@@ -102,9 +109,6 @@ python generate_initial_pose_command.py "{Include printed coordinates here}".
 ros2 topic pub --once /initialpose geometry_msgs/msg/PoseWithCovarianceStamped '{header: {stamp: {sec: 1708461407, nanosec: 151011266}, frame_id: "map"}, pose: {pose: {position: {x: 3730.777099609375, y: 73724.90625, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.9610824749843778, w: 0.27626160840388697}}, covariance: [0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06853891909122467]}}'
 ```
 
-This command can then be used inside a script with additional code to handle running the command as a subprocess.
-
-
 <br>
 
 
@@ -149,8 +153,6 @@ python generate_goal_pose_command.py "{Include printed coordinates here}".
 ```
 ros2 topic pub /planning/mission_planning/goal geometry_msgs/msg/PoseStamped '{header: {stamp: {sec: 1708463402, nanosec: 486667092}, frame_id: 'map'}, pose: {position: {x: 3733.503173828125, y: 73758.703125, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.5108924948741428, w: 0.859644611849149}}}' --once
 ```
-
-This command can then be used inside a script with additional code to handle running the command as a subprocess.
 
 
 <br>
