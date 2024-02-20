@@ -153,5 +153,14 @@ ros2 topic pub /planning/mission_planning/goal geometry_msgs/msg/PoseStamped '{h
 This command can then be used inside a script with additional code to handle running the command as a subprocess.
 
 
+<br>
+
+## Enabling Autonomous Mode
+
+To enable autonomous mode, simply run the following publish command:
+
+```
+"ros2 topic pub --once /autoware/engage autoware_auto_vehicle_msgs/msg/Engage '{engage: true}'"
+```
 
 
