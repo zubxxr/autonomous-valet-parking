@@ -34,7 +34,7 @@ source /opt/ros/humble/setup.bash
 ```
 
 #### 3. Run the command inside the sourced terminal: 
-``` 
+```
 ros2 topic echo /initialpose
 ```
 
@@ -154,4 +154,7 @@ python generate_goal_pose_command.py "{Include printed coordinates here}".
 ros2 topic pub /planning/mission_planning/goal geometry_msgs/msg/PoseStamped '{header: {stamp: {sec: 1708463402, nanosec: 486667092}, frame_id: 'map'}, pose: {position: {x: 3733.503173828125, y: 73758.703125, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.5108924948741428, w: 0.859644611849149}}}' --once
 ```
 
+
+<br> 
+*Note: README.md is a work in progress. More detailed documentation will be added soon.*
 
