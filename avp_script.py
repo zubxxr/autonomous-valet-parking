@@ -30,12 +30,10 @@ class RouteStateSubscriber(Node):
             '/planning/mission_planning/route_selector/main/state',
             self.route_state_callback,
             10)
-        # self.subscription  # prevent unused variable warning
         self.flag = False
         self.state = -1
 
     def route_state_callback(self, msg):
-        # self.get_logger().info('Received route state: %s' % msg.state)
         if msg.state == 6:
            print("\nCar has been parked.")
            self.state = 6
@@ -43,7 +41,6 @@ class RouteStateSubscriber(Node):
 def run_ros2_command(command):
     try:
         subprocess.run(command, shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        # print("Command executed successfully.")
     except subprocess.CalledProcessError as e:
         print(f"Error executing command: {e}")
     
@@ -55,7 +52,6 @@ def main(args=None):
    	
     initial_pose = "ros2 topic pub --once /initialpose geometry_msgs/msg/PoseWithCovarianceStamped '{header: {stamp: {sec: 1707959787, nanosec: 781504725}, frame_id: \"map\"}, pose: {pose: {position: {x: 3728.91259765625, y: 73723.5546875, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.9749977244098511, w: 0.2222148451287896}}, covariance: [0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06853891909122467]}}'"
     engage_auto_mode = "ros2 topic pub --once /autoware/engage autoware_auto_vehicle_msgs/msg/Engage '{engage: true}'"
-
 
     entrance_location = "ros2 topic pub /planning/mission_planning/goal geometry_msgs/msg/PoseStamped '{header: {stamp: {sec: 1708315201, nanosec: 354400841}, frame_id: 'map'}, pose: {position: {x: 3730.5029296875, y: 73724.484375, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.9714600644596665, w: 0.2372031685286277}}}' --once"
 
@@ -86,10 +82,7 @@ def main(args=None):
         ############### START PARKING SPOT DETECTION ###############
         if initiate_parking and route_state_subscriber.state != 6:
 
-            # in that 2 minutes, it will wait to see if any parking spots are available.
-            # if not, it will go back to drop off zone.
-
-            rclpy.spin_once(parking_spot_subscriber, timeout_sec=0.1)  # Allow ROS 2 to process events
+            rclpy.spin_once(parking_spot_subscriber, timeout_sec=0.1)  
 
             if parking_spot_subscriber.available_parking_spots is None:
                 print('Waiting for available parking spots...')
@@ -98,8 +91,6 @@ def main(args=None):
                 
                 first_spot_in_queue = int(parking_spot_subscriber.available_parking_spots.split(',')[0].strip('[a]'))
 
-            
-                # if first parking spot in queue is different from chosen spot
                 if first_spot_in_queue != chosen_parking_spot:
                     
                     if counter == 1:
@@ -113,7 +104,6 @@ def main(args=None):
                     print('\nAvailable parking spot found: %s' % first_spot_in_queue)
                     
                     parking_spot_goal_pose_command = parking_spot_locations[first_spot_in_queue]
-                    # print("Location Command:", location_command)
                     run_ros2_command(parking_spot_goal_pose_command)
                     run_ros2_command(engage_auto_mode)
                     print('Setting goal pose to parking spot:', first_spot_in_queue)
@@ -131,44 +121,17 @@ def main(args=None):
                 user_input = input().lower()
 
                 if user_input == "yes" or user_input == "y":
-                    print(" Going to Drop Off Zone.")
+                    print("Going to Drop Off Zone.")
                     run_ros2_command(entrance_location)
-                    # time.sleep(2)  
                     run_ros2_command(engage_auto_mode)
                 elif user_input == "no" or user_input == "n":
                     print("Exiting the script.")
-                    # Add any cleanup or exit code here if needed
                     exit()
                 else:
                     print("Invalid input. Please enter 'yes' or 'no'.")
 
                 route_state_subscriber.state = -1
                 new_counter += 1                  
-
-        # # if counter is 1, drive back to goal
-        # if new_counter == 1:
-        #     if route_state_subscriber.state == 6:
-        #         print("Park car? (yes/no)")
-
-        #         user_input = input().lower()
-
-        #         if user_input == "yes" or user_input == "y":
-        #             print("Going to Goal.")
-        #             for command in ros2_commands[1:]:
-        #                 run_ros2_command(command)
-        #                 time.sleep(2) 
-        #         elif user_input == "no" or user_input == "n":
-        #             print("Exiting the script.")
-        #             # Add any cleanup or exit code here if needed
-        #             exit()
-        #         else:
-        #             print("Invalid input. Please enter 'yes' or 'no'.")
-
-        #         route_state_subscriber.state = -1
-        #         new_counter += 1
-
-        # if new_counter == 2:
-        #     new_counter = 0
         
         rclpy.spin_once(route_state_subscriber, timeout_sec=1)
         
