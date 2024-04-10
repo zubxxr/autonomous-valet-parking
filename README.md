@@ -1,12 +1,29 @@
 # Autoware Automated Valet Parking Script
 
-This script has been developed for use with Autoware. It allows for publishing messages that tell the ego vehicle to follow a looped route in the case that no free parking spots are found.
+This script has been developed for use with Autoware. It communicates with the external parking spot detection node and receives available parking spot messages, which are used to tell the ego vehicle where to park.
+
 
 <br>
 
+## Running Script on Sample Map Provided by Autoware
+
+To run the script on the default map given by Autoware, you first need to launch the [Parking Spot Detection Node](https://github.com/zubxxr/Automated-Valet-Parking-Autoware/tree/main/parking_detection). Once it is running, launch Autoware in another terminal.
+
+```
+source /path/to/your/autoware/install/setup.bash
+source /opt/ros/<distro>/setup.bash
+
+ros2 launch autoware_launch planning_simulator.launch.xml \
+    map_path:=$HOME/autoware_map/sample-map-planning \
+    vehicle_model:=sample_vehicle \
+    sensor_model:=sample_sensor_kit
+```
+
+
+
 ## Customizing Map Parameters
 
-To run the script on a specific map, you need to update the initial pose and goal pose commands inside the script. This ensures proper functioning of the script with the chosen map. Follow the steps below to customize the map parameters.
+To run the script on your custom map, you need to know the coordinates of the entrance to the parking lot and each parking spot and then update the initial pose and goal pose commands inside the script. Follow the steps below to customize the map parameters.
 
 
 <br>
@@ -19,18 +36,21 @@ To automate the process of publishing the intitial pose of the ego vehicle, the 
 Before proceeding, ensure that Autoware is running. If not, start Autoware with the following command:
 
 ```
+source /path/to/your/autoware/install/setup.bash
+source /opt/ros/<distro>/setup.bash
+
 ros2 launch autoware_launch planning_simulator.launch.xml \
-    map_path:=/path/to/your/map \
-    vehicle_model:=sample_vehicle \
-    sensor_model:=sample_sensor_kit
+    map_path:=/PATH/TO/YOUR/MAP \
+    vehicle_model:=YOUR_VEHICLE \
+    sensor_model:=YOUR_SENSOR_KIT
 ```
 
-#### 2. Source Autoware and ROS2 Environment.
-Open a new terminal and source the Autoware and ROS2 environment setup files. Modify the paths according to your installation directory if they differ.
+#### 2. Source Autoware and ROS 2 Environment.
+Open a new terminal and source the Autoware and ROS 2 environment setup files. Modify the paths according to your installation directory if they differ.
 
 ```
 source /path/to/your/autoware/install/setup.bash
-source /opt/ros/humble/setup.bash
+source /opt/ros/<distro>/setup.bash
 ```
 
 #### 3. Run the command inside the sourced terminal: 
@@ -38,7 +58,7 @@ source /opt/ros/humble/setup.bash
 ros2 topic echo /initialpose
 ```
 
-#### 4. Set an initial pose on a lane inside the RViz window.
+#### 4. Set an initial pose at the parking spot entrance on a lane inside the RViz window.
 
 #### 5. Capture the coordinates from the echoed message.
 
@@ -121,7 +141,7 @@ Similarly to the initial pose, the goal pose location coordinates are also requi
 ros2 topic echo /planning/mission_planning/goal
 ```
 
-#### 2. Select a goal pose on a lane inside the RViz window.
+#### 2. Select a goal pose in the center of a parking spot inside the RViz window.
 
 #### 3. Capture the coordinates from the echoed message.
 
@@ -153,6 +173,9 @@ python generate_goal_pose_command.py "{Include printed coordinates here}".
 ```
 ros2 topic pub /planning/mission_planning/goal geometry_msgs/msg/PoseStamped '{header: {stamp: {sec: 1708463402, nanosec: 486667092}, frame_id: 'map'}, pose: {position: {x: 3733.503173828125, y: 73758.703125, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.5108924948741428, w: 0.859644611849149}}}' --once
 ```
+
+#### 5. Repeat for all other parking spots
+
 
 
 <br> 
