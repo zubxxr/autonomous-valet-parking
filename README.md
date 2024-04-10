@@ -7,7 +7,7 @@ This script has been developed for use with Autoware. It communicates with the e
 
 ## Running Script on Sample Map Provided by Autoware
 
-To run the script on the default map given by Autoware, you first need to launch the [Parking Spot Detection Node](https://github.com/zubxxr/Automated-Valet-Parking-Autoware/tree/main/parking_detection). Once it is running, launch Autoware in another terminal.
+To run the script on the default map given by Autoware, you first need to launch the [Parking Spot Detection Node](https://github.com/zubxxr/Parking-Spot-Detection-Autoware). Once it is running, launch Autoware in another terminal.
 
 ```
 source /path/to/your/autoware/install/setup.bash
