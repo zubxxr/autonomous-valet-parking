@@ -25,9 +25,6 @@ ros2 launch autoware_launch planning_simulator.launch.xml \
 
 To run the script on your custom map, you need to know the coordinates of the entrance to the parking lot and each parking spot and then update the initial pose and goal pose commands inside the script. Follow the steps below to customize the map parameters.
 
-
-<br>
-
 ## Generating a Publish Initial Pose Command
 
 To automate the process of publishing the intitial pose of the ego vehicle, the publish command is required. Follow these steps:
@@ -132,7 +129,7 @@ ros2 topic pub --once /initialpose geometry_msgs/msg/PoseWithCovarianceStamped '
 <br>
 
 
-## Generating a Publish Goal Pose Command
+## Generating Publish Goal Pose Commands
 
 Similarly to the initial pose, the goal pose location coordinates are also required. Follow these steps:
 
