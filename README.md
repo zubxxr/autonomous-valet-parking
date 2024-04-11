@@ -6,8 +6,6 @@ This script has been developed for use with Autoware. It communicates with the e
 ## Table of Contents
 
 - [Quick Setup: Running Script on Sample Map Provided by Autoware](#quick-setup-running-script-on-sample-map-provided-by-autoware)
-    - [Launch Parking Spot Detection Node](#launch-parking-spot-detection-node)
-    - [Launch Autoware](#launch-autoware)
 - [Detailed and Customized Setup](#detailed-and-customized-setup)
     - [Generating a Publish Initial Pose Command](#generating-a-publish-initial-pose-command)
     - [Generating Publish Goal Pose Commands](#generating-publish-goal-pose-commands)
@@ -143,12 +141,7 @@ Automate the process of publishing the initial pose of the ego vehicle by follow
     ```python
     set_initial_pose_entrance = "ros2 topic pub --once /initialpose geometry_msgs/msg/PoseWithCovarianceStamped '{header: {stamp: {sec: 1707959787, nanosec: 781504725}, frame_id: \"map\"}, pose: {pose: {position: {x: 3728.91259765625, y: 73723.5546875, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.9749977244098511, w: 0.2222148451287896}}, covariance: [0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06853891909122467]}}'"
     ```
-    
-
-
-<br>
-
-
+   
 ### Generating Publish Goal Pose Commands
 
 Similarly to the initial pose, the goal pose location coordinates are also required. Follow these steps:
