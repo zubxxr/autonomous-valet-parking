@@ -5,19 +5,13 @@ This script has been developed for use with Autoware. It communicates with the e
 
 ## Table of Contents
 
-- [Introduction](#introduction)
 - [Quick Setup: Running Script on Sample Map Provided by Autoware](#quick-setup-running-script-on-sample-map-provided-by-autoware)
     - [Launch Parking Spot Detection Node](#launch-parking-spot-detection-node)
     - [Launch Autoware](#launch-autoware)
 - [Detailed and Customized Setup](#detailed-and-customized-setup)
-    - [Customizing Map Parameters](#customizing-map-parameters)
     - [Generating a Publish Initial Pose Command](#generating-a-publish-initial-pose-command)
     - [Generating Publish Goal Pose Commands](#generating-publish-goal-pose-commands)
     - [Executing Parking Spot Detection](#executing-parking-spot-detection)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 <br>
 
