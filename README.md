@@ -11,8 +11,6 @@ This script has been developed for use with Autoware. It communicates with the e
     - [Generating Publish Goal Pose Commands](#generating-publish-goal-pose-commands)
     - [Executing Parking Spot Detection](#executing-parking-spot-detection)
 
-<br>
-
 ## Quick Setup: Running Script on Sample Map Provided by Autoware
 
 This section provides a quick setup guide to use the parking spot detection node and Autoware, enabling the vehicle to park itself on the default map provided by Autoware.
