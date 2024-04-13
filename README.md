@@ -5,13 +5,13 @@ This script has been developed for use with Autoware. It communicates with the e
 
 ## Table of Contents
 
-- [Quick Setup: Running Script on Sample Map Provided by Autoware](#quick-setup-running-script-on-sample-map-provided-by-autoware)
-- [Detailed and Customized Setup](#detailed-and-customized-setup)
+- [Quick Setup](#quick-setup)
+- [Customized Setup](#customized-setup)
     - [Generating a Publish Initial Pose Command](#generating-a-publish-initial-pose-command)
     - [Generating Publish Goal Pose Commands](#generating-publish-goal-pose-commands)
     - [Executing Parking Spot Detection](#executing-parking-spot-detection)
 
-## Quick Setup: Running Script on Sample Map Provided by Autoware
+## Quick Setup
 
 This section provides a quick setup guide to use the parking spot detection node and Autoware, enabling the vehicle to park itself on the default map provided by Autoware.
 
@@ -32,7 +32,7 @@ This section provides a quick setup guide to use the parking spot detection node
     Make sure to replace `/path/to/your/autoware/install/setup.bash` with the actual path to your Autoware installation directory and `<distro>` with your ROS distribution (e.g., `galactic`, `humble`, etc.).
 
 
-## Detailed and Customized Setup
+## Customized Setup
 
 To run the script on your custom map, you need to know the coordinates of the entrance to the parking lot and each parking spot and then update the initial pose and goal pose commands inside the script. Follow the steps below to customize the map parameters.
 
