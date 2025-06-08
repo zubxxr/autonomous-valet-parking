@@ -1,6 +1,22 @@
-# Autoware Automated Valet Parking Script
+# Autonomous Valet Parking Script
 
-This script has been developed for use with Autoware. It communicates with the external parking spot detection node and receives available parking spot messages, which are used to tell the ego vehicle where to park.
+This script was developed for use with Autoware and integrates with an external parking spot detection node. It receives available parking spot messages and assigns the ego vehicle a destination based on detected free spots.
+
+When combined with **Autoware**, **AWSIM**, **YOLOv5**, and Unity-based scripts for bounding box visualization, the system enables a fully autonomous valet parking flow — from perception to path planning and final parking.
+
+**Initialization**  
+![Before](https://github.com/user-attachments/assets/7dcb728a-3b5e-4fbb-ac62-18db01248b7e)
+
+**Parking Spot Found and Route Set**  
+![image](https://github.com/user-attachments/assets/187c54d2-e11e-4850-b362-7454c0104497)
+
+**Vehicle Autonomously Parked**  
+![After](https://github.com/user-attachments/assets/d41e3727-d479-438f-a913-0b15315c3e32)
+
+
+![Watch the demo](https://drive.google.com/file/d/1ZHGiuKllvSwA52fHZd8gjnOiv0Qxt4VL/view)
+
+> Click above to watch a 1-minute demo of the autonomous valet parking system in action, built using ROS 2, Unity, and YOLO-based perception.
 
 
 ## Table of Contents
