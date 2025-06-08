@@ -14,7 +14,7 @@ When combined with **Autoware**, **AWSIM**, **YOLOv5**, and Unity-based scripts 
 ![After](https://github.com/user-attachments/assets/d41e3727-d479-438f-a913-0b15315c3e32)
 
 
-![Watch the demo](https://drive.google.com/file/d/1ZHGiuKllvSwA52fHZd8gjnOiv0Qxt4VL/view?usp=drive_link)
+Watch the demo: https://drive.google.com/file/d/1ZHGiuKllvSwA52fHZd8gjnOiv0Qxt4VL/view?usp=drive_link
 
 > Click above to watch a 1-minute demo of the autonomous valet parking system in action, built using ROS 2, Unity, and YOLO-based perception.
 
