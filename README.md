@@ -1,4 +1,4 @@
-# Autonomous Valet Parking
+# Autonomous Valet Parkingg
 
 This repository contains a script that was developed for use with Autoware and integrates with an external parking spot detection node. It receives available parking spot messages and assigns the ego vehicle a destination based on detected free spots.
 
