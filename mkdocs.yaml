@@ -1,0 +1,71 @@
+site_name: Autonomous Valet Parking Framework
+site_description: A simulation framework for autonomous valet parking using Autoware and AWSIM Labs
+site_url: https://zubxxr.github.io/autonomous-valet-parking
+
+repo_name: zubxxr/autonomous-valet-parking
+repo_url: https://github.com/zubxxr/autonomous-valet-parking
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - tags
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+
+  - Getting Started:
+      - System Architecture: GettingStarted/SystemArchitecture/index.md
+      - Software Installation: GettingStarted/SoftwareInstallation/index.md
+      - Simulation Workflow: GettingStarted/SimulationWorkflow/index.md
+
+  - Extensions:
+      - Parking Spot Detection: Extensions/ParkingSpotDetection/index.md
+      - Future Work: Extensions/FutureWork/index.md
+
+  - About:
+      - License: About/License/index.md
+      - Acknowledgements: About/Acknowledgements/index.md
