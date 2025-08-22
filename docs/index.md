@@ -5,4 +5,10 @@ This repository provides a framework for running autonomous valet parking simula
 When combined with Autoware, AWSIM, YOLOv5, and Unity-based scripts for bounding box visualization, the system enables a fully autonomous valet parking flow — from perception to path planning and final parking.
 
 ## Demo
-🎥 [Watch the 1-minute demo](https://drive.google.com/file/d/1ZHGiuKllvSwA52fHZd8gjnOiv0Qxt4VL/view?usp=drive_link)
+<iframe width="640" height="360" 
+    src="https://www.youtube.com/embed/Rb2c4pnMajc" 
+    title="Autonomous Valet Parking with Autoware and AWSIM Labs" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>

@@ -14,8 +14,9 @@ It enables a complete valet parking experience inside simulation, with automated
 ---
 
 <a href="https://www.youtube.com/watch?v=Rb2c4pnMajc">
-  <img src="https://github.com/user-attachments/assets/8c05fd80-eae8-42ce-b2ed-64edcdb3703a" width="500">
+  <img src="docs/demo_preview.png" width="500">
 </a>
+
 ---
 
 ## Features
