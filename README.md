@@ -35,3 +35,13 @@ It enables a complete valet parking experience inside simulation, with automated
 [https://zubxxr.github.io/autonomous-valet-parking](https://zubxxr.github.io/autonomous-valet-parking)
 
 ---
+
+## License
+This project is licensed under the Apache License 2.0.
+
+## Contact
+For questions, suggestions, or collaboration opportunities, feel free to reach out:
+
+- **Author:** Zubair Islam  
+- **Email:** zubxxr@gmail.com
+- **LinkedIn:** [linkedin.com/in/zubairislam02](https://www.linkedin.com/in/zubairislam02/)
