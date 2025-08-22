@@ -30,21 +30,8 @@ It enables a complete valet parking experience inside simulation, with automated
 
 ---
 
-## Demo
-
-🎥 [Watch the 1-minute demo](https://drive.google.com/file/d/1ZHGiuKllvSwA52fHZd8gjnOiv0Qxt4VL/view?usp=drive_link)
-
----
-
 ## Getting Started and Documentation
 
 [https://zubxxr.github.io/autonomous-valet-parking](https://zubxxr.github.io/autonomous-valet-parking)
 
 ---
-
-## Contact
-For questions, suggestions, or collaboration opportunities, feel free to reach out:
-
-- **Author:** Zubair Islam  
-- **Email:** zubxxr@gmail.com  
-- **LinkedIn:** [linkedin.com/in/zubairislam02](https://www.linkedin.com/in/zubairislam02/)  
