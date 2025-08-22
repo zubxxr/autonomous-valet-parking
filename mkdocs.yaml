@@ -62,10 +62,5 @@ nav:
       - Software Installation: GettingStarted/SoftwareInstallation/index.md
       - Simulation Workflow: GettingStarted/SimulationWorkflow/index.md
 
-  - Extensions:
-      - Parking Spot Detection: Extensions/ParkingSpotDetection/index.md
-      - Future Work: Extensions/FutureWork/index.md
-
-  - About:
-      - License: About/License/index.md
-      - Acknowledgements: About/Acknowledgements/index.md
+  - Developer Guide:
+    - License: DeveloperGuide/License/index.md

@@ -12,3 +12,9 @@ When combined with Autoware, AWSIM, YOLOv5, and Unity-based scripts for bounding
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
 </iframe>
+
+## Getting Started
+
+See [System Architecture](GettingStarted/SystemArchitecture/index.md).
+
+---
