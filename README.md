@@ -39,6 +39,8 @@ It enables a complete valet parking experience inside simulation, with automated
 ## License
 This project is licensed under the Apache License 2.0.
 
+---
+
 ## Contact
 For questions, suggestions, or collaboration opportunities, feel free to reach out:
 
