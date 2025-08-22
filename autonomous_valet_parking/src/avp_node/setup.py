@@ -11,7 +11,6 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/launch', ['launch/multi_avp_launch.py']),
-        ('share/' + package_name + '/scripts', ['scripts/echo_avp_topics.sh']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -31,7 +30,6 @@ setup(
 
             # Debugging
             'publish_parking_spots = avp_node.debugging.publish_parking_spots:main',
-            'publish_reserved_spots = avp_node.debugging.publish_reserved_spots:main',
         ],
     },
 )
