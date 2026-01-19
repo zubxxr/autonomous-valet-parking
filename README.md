@@ -1,7 +1,7 @@
 # Autonomous Valet Parking Framework
 *A Simulation Framework for Perception-to-Parking Automation*
 
-> **Note:** Source code will be released in a future update once publication and review processes are complete.
+> **Status:** This repository contains the reference implementation used for the Autonomous Valet Parking simulation. The project continues to evolve alongside ongoing research and publications.
 
 ![Autoware](https://img.shields.io/badge/Autoware-2024.11-blue?logo=autoware)
 ![AWSIM Labs](https://img.shields.io/badge/AWSIM%20Labs-Unity-green?logo=unity)
